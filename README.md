@@ -12,8 +12,12 @@ Sample ASP.NET Web Application
 
 Visual Studio 2017
 
+![Publish Web Application](/media/publish-app-1.png?raw=true)
 
+![Publish Web Application](/media/publish-app-2.png?raw=true)
+
+![Publish Web Application](/media/publish-app-3.png?raw=true)
 
 # Deploy Application to IIS
 
-
+manual follows...
