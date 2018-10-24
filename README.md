@@ -30,7 +30,9 @@ https://go.microsoft.com/?linkid=9278654
     - `biz.dfch.CS.Examples.SampleAspNetWebApp.SetParameters.xml`
     - `biz.dfch.CS.Examples.SampleAspNetWebApp.SourceManifest.xml`
     - `biz.dfch.CS.Examples.SampleAspNetWebApp.zip`
-1. Deploy the Web package to IIS with the following command
+1. Open PowerShell console or CMD
+1. 
+1. Deploy the Web package to IIS by executing the following command
 
     PATH\TO\biz.dfch.CS.Examples.SampleAspNetWebApp.deploy.cmd /Y
 
