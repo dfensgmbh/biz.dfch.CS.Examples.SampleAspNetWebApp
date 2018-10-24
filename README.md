@@ -31,6 +31,9 @@ https://go.microsoft.com/?linkid=9278654
     - `biz.dfch.CS.Examples.SampleAspNetWebApp.SourceManifest.xml`
     - `biz.dfch.CS.Examples.SampleAspNetWebApp.zip`
 1. Replace the value of `DefaultConnection-Web.config Connection String` in `biz.dfch.CS.Examples.SampleAspNetWebApp.SetParameters.xml` with the connection string of the MSSQL database the application should use
+
+    For examples see [here](https://www.connectionstrings.com/sql-server/)
+
 1. Open PowerShell console or CMD
 1. Deploy the Web package to IIS by executing the following command
 
