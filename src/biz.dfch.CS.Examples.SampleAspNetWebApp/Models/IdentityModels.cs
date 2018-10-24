@@ -30,7 +30,16 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
 
-            // DFTODO - add claims here
+            // DFTODO - custom code for role assignment
+            var user = manager.FindByName(userIdentity.GetUserName());
+            if (userIdentity.GetUserName().EndsWith("@d-fens.net"))
+            {
+                manager.AddToRole(user.Id, Startup.ADMINISTRATOR_ROLE);
+            }
+            else
+            {
+                manager.AddToRole(user.Id, Startup.USER_ROLE);
+            }
 
             return userIdentity;
         }
