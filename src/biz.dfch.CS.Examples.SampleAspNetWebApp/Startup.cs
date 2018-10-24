@@ -25,8 +25,8 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp
 {
     public partial class Startup
     {
-        private const string ADMINISTRATOR_ROLE = "Administrator";
-        private const string USER_ROLE = "User";
+        public const string ADMINISTRATOR_ROLE = "Administrator";
+        public const string USER_ROLE = "User";
 
         public void Configuration(IAppBuilder app)
         {
