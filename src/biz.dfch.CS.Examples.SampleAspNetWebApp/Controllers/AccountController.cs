@@ -28,8 +28,8 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        private ApplicationSignInManager signInManager;
+        private ApplicationUserManager userManager;
 
         public AccountController()
         {
@@ -43,26 +43,14 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp.Controllers
 
         public ApplicationSignInManager SignInManager
         {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set 
-            { 
-                _signInManager = value; 
-            }
+            get => signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            private set => signInManager = value;
         }
 
         public ApplicationUserManager UserManager
         {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
+            get => userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            private set => userManager = value;
         }
 
         //
@@ -96,6 +84,7 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp.Controllers
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
+                    // ReSharper disable once RedundantAnonymousTypePropertyName
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
@@ -420,16 +409,16 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp.Controllers
         {
             if (disposing)
             {
-                if (_userManager != null)
+                if (userManager != null)
                 {
-                    _userManager.Dispose();
-                    _userManager = null;
+                    userManager.Dispose();
+                    userManager = null;
                 }
 
-                if (_signInManager != null)
+                if (signInManager != null)
                 {
-                    _signInManager.Dispose();
-                    _signInManager = null;
+                    signInManager.Dispose();
+                    signInManager = null;
                 }
             }
 
@@ -438,7 +427,7 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp.Controllers
 
         #region Helpers
         // Used for XSRF protection when adding external logins
-        private const string XsrfKey = "XsrfId";
+        private const string XSRF_KEY = "XsrfId";
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -488,7 +477,7 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp.Controllers
                 var properties = new AuthenticationProperties { RedirectUri = RedirectUri };
                 if (UserId != null)
                 {
-                    properties.Dictionary[XsrfKey] = UserId;
+                    properties.Dictionary[XSRF_KEY] = UserId;
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }

@@ -29,6 +29,9 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+
+            // DFTODO - add claims here
+
             return userIdentity;
         }
     }
