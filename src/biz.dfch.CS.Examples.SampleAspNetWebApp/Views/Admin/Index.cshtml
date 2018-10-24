@@ -1,0 +1,33 @@
+﻿@model biz.dfch.CS.Examples.SampleAspNetWebApp.Models.AdminViewModel
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Roles</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+
+<div>
+    <table class="table"">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Roles)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table> 
+</div>
