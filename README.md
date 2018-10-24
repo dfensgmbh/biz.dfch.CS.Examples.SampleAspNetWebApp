@@ -10,13 +10,11 @@ Sample ASP.NET Web Application
 
 # Publish Application
 
-Visual Studio 2017
-
-![Publish Web Application](/media/publish-app-1.png?raw=true)
-
-![Publish Web Application](/media/publish-app-2.png?raw=true)
-
-![Publish Web Application](/media/publish-app-3.png?raw=true)
+1. Open solution in Visual Studio 2017
+1. Right click on the project `biz.dfch.CS.Examples.SampleAspNetWebApp` and select `Publish...`
+1. ![Publish Web Application](/media/publish-app-1.png?raw=true)
+1. ![Publish Web Application](/media/publish-app-2.png?raw=true)
+1. ![Publish Web Application](/media/publish-app-3.png?raw=true)
 
 # Deploy Application to IIS
 
@@ -33,6 +31,6 @@ https://go.microsoft.com/?linkid=9278654
     - biz.dfch.CS.Examples.SampleAspNetWebApp.zip
 1. Deploy the Web package to IIS with the following command
 
-PATH\TO\biz.dfch.CS.Examples.SampleAspNetWebApp.deploy.cmd /Y
+    PATH\TO\biz.dfch.CS.Examples.SampleAspNetWebApp.deploy.cmd /Y
 
-For more details concerning the flags, that can be used when executing `biz.dfch.CS.Examples.SampleAspNetWebApp.deploy.cmd` see `biz.dfch.CS.Examples.SampleAspNetWebApp.deploy-readme.txt`
+    For more details concerning the flags, that can be used when executing `biz.dfch.CS.Examples.SampleAspNetWebApp.deploy.cmd` see `biz.dfch.CS.Examples.SampleAspNetWebApp.deploy-readme.txt`
