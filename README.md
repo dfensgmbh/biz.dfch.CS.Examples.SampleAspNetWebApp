@@ -4,7 +4,7 @@
 Sample ASP.NET Web Application
 
 # Project Configuration
-- **Template:** ASP.NET Web Application
+- **Project Template:** ASP.NET Web Application
 - **Type:** MVC
 - **Authentication:** Individual User Accounts
 
