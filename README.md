@@ -4,5 +4,16 @@
 Sample ASP.NET Web Application
 
 # Project Configuration
-- Template: MVC
+- Template: ASP.NET Web Application
+- Type: MVC
 - Authentication: Individual User Accounts
+
+# Publish Application
+
+Visual Studio 2017
+
+
+
+# Deploy Application to IIS
+
+
