@@ -34,6 +34,7 @@ https://go.microsoft.com/?linkid=9278654
 
     For examples see [here](https://www.connectionstrings.com/sql-server/)
 
+1. Prefix value of `IIS Web Application Name` in `biz.dfch.CS.Examples.SampleAspNetWebApp.SetParameters.xml` with `Default Web Site\`
 1. Open PowerShell console or CMD
 1. Deploy the Web package to IIS by executing the following command
 
