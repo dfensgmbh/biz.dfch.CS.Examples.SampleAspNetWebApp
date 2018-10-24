@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+using biz.dfch.CS.Examples.SampleAspNetWebApp.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
 
@@ -22,9 +25,22 @@ namespace biz.dfch.CS.Examples.SampleAspNetWebApp
 {
     public partial class Startup
     {
+        private const string ADMINISTRATOR_ROLE = "Administrator";
+        private const string USER_ROLE = "User";
+
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+            // DFTODO - custom code for initial role creation
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
+            CreateRoleIfNotExists(roleManager, ADMINISTRATOR_ROLE);
+            CreateRoleIfNotExists(roleManager, USER_ROLE);
+        }
+
+        private void CreateRoleIfNotExists(RoleManager<IdentityRole> roleManager, string roleName)
+        {
+            roleManager.Create(new IdentityRole(roleName));
         }
     }
 }
