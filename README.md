@@ -32,6 +32,8 @@ https://go.microsoft.com/?linkid=9278654
     - `biz.dfch.CS.Examples.SampleAspNetWebApp.zip`
 1. Replace the value of `DefaultConnection-Web.config Connection String` in `biz.dfch.CS.Examples.SampleAspNetWebApp.SetParameters.xml` with the connection string of the MSSQL database the application should use
 
+    **Important:** The user the application uses to connect to the database has to have permissions to create and update databases and to create, read, update and delete entries from its databases (even if using windows authentication in combination with DefaultAppPool the DefaultAppPool user has to have the before described permissions).
+
     For examples see [here](https://www.connectionstrings.com/sql-server/)
 
 1. Prefix value of `IIS Web Application Name` in `biz.dfch.CS.Examples.SampleAspNetWebApp.SetParameters.xml` with `Default Web Site\`
